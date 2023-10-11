@@ -8,6 +8,7 @@ import indexRouter from './routes/indexRouter';
 import apiRouter from './routes/apiRouter';
 import resLocals from './middlewares/resLocals';
 import authRouter from './routes/authRouter';
+import renderRouter from './routes/renderRouter';
 
 require('dotenv').config();
 
@@ -39,7 +40,8 @@ app.use(session(sessionConfig));
 app.use(resLocals);
 
 app.use('/', indexRouter);
-// app.use('/', authRouter);
+app.use('/', authRouter);
+app.use('/', renderRouter);
 app.use('/api', apiRouter);
 
 app.listen(PORT, () => console.log(`App has started on port ${PORT}`));
