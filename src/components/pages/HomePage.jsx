@@ -13,7 +13,7 @@ export default function HomePage({ user, allRoutes }) {
       <Button variant="secondary" type="submit">
         Submit
       </Button>
-      <div className="row mt-5">
+      <div className="row mt-5" style={{ display: 'flex', justifyContent: 'space-evenly' }}>
         {routes.map((route) => (
           <CardRoute key={route.id} route={route} user={user} />
         ))}
