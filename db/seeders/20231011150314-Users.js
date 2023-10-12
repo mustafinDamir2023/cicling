@@ -10,6 +10,18 @@ module.exports = {
         createdAt: new Date(),
         updatedAt: new Date()
       },
+      { name: 'Евгений',
+        email: 'PierreDunn@Ucoz.ru',
+        password: 'qwerty',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      { name: 'Василий',
+        email: 'VasyaPupkin@MMM.ru',
+        password: 'pupkinRulez1',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
       ], {});
   },
 

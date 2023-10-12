@@ -14,4 +14,6 @@ authRouter.get('/logout', async (req, res) => {
   res.json({ message: 'Выход из системы осуществлён успешно' });
 });
 
+
 export default authRouter;
+
