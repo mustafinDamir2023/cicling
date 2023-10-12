@@ -8,13 +8,11 @@ export default function CardRoute({ user, route, deleteHandler }) {
   const showHandler = () => {
     setShow((prev) => !prev);
   };
-  
+
   return (
     <Card style={{ width: '20rem' }}>
-      
       <Card.Img variant="top" src={route.img} />
       <Card.Body>
-        
         <Card.Title>{route.name}</Card.Title>
         <Card.Text>{route.location}</Card.Text>
         <Card.Text>Дистанция {route.distance} км</Card.Text>
@@ -23,12 +21,12 @@ export default function CardRoute({ user, route, deleteHandler }) {
             Подробнее
           </Button>
           <ButtonGroup aria-label="Basic example">
-            <Button variant="secondary">уд.</Button>
-            <Button variant="secondary" onClick={showHandler}>
+            <Button onClick={() => deleteHandler(route.id)} variant="secondary">
+              уд.
+            </Button>
+            <Button onClick={showHandler} variant="secondary">
               ред.
             </Button>
-            <Button onClick={() => deleteHandler(route.id)} variant="secondary">уд.</Button>
-            <Button variant="secondary">ред.</Button>
           </ButtonGroup>
         </div>
       </Card.Body>
