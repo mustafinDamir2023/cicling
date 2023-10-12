@@ -3,7 +3,7 @@ import { Card, Button, ButtonGroup } from 'react-bootstrap';
 
 export default function CardRoute({ user, route }) {
   return (
-    <Card style={{ width: '18rem' }}>
+    <Card style={{ width: '20rem' }}>
       <Card.Img variant="top" src={route.img} />
       <Card.Body>
         <Card.Title>{route.name}</Card.Title>
