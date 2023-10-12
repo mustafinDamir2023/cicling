@@ -2,7 +2,7 @@ import React from 'react';
 import { Card, Button, ButtonGroup } from 'react-bootstrap';
 import Raiting from './RaitingPage';
 
-export default function CardRoute({ user, route }) {
+export default function CardRoute({ user, route, deleteHandler }) {
   return (
     <Card style={{ width: '20rem' }}>
       
@@ -17,7 +17,7 @@ export default function CardRoute({ user, route }) {
             Подробнее
           </Button>
           <ButtonGroup aria-label="Basic example">
-            <Button variant="secondary">уд.</Button>
+            <Button onClick={() => deleteHandler(route.id)} variant="secondary">уд.</Button>
             <Button variant="secondary">ред.</Button>
           </ButtonGroup>
         </div>
