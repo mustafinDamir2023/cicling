@@ -10,6 +10,18 @@ module.exports = {
         createdAt: new Date(),
         updatedAt: new Date()
       },
+      { score: 20,
+        route_id: 2,
+        user_id: 2,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      { score: 30,
+        route_id: 3,
+        user_id: 3,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
       ], {});
   },
 
