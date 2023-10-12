@@ -40,6 +40,8 @@ app.use((req, res, next) => {
   res.locals.path = req.originalUrl;
   next();
 });
+app.use(session(sessionConfig));
+
 app.use((req, res, next) => {
   res.locals.user = req.session.user;
   next();
@@ -48,7 +50,9 @@ app.use(resLocals);
 
 app.use('/', indexRouter);
 app.use('/', renderRouter);
+app.use('/api',  apiRouter)
 app.use('/api/auth', apiAuthRouter);
-app.use('/auth', signInUserMiddleWare, authRouter);
+app.use('/auth', authRouter);
+
 
 app.listen(PORT, () => console.log(`App has started on port ${PORT}`));

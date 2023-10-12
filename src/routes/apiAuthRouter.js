@@ -61,4 +61,5 @@ apiAuthRouter.post('/logout', (req, res) => {
   res.clearCookie('test');
   res.sendStatus(200);
 });
+
 export default apiAuthRouter;
