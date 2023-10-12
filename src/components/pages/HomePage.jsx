@@ -11,7 +11,7 @@ export default function HomePage({ user, allRoutes }) {
       <Form.Control name="name" type="text" placeholder="filter" style={{width: '275px'}}/>
       <br />
       <Button variant="secondary" type="submit">
-        Submit
+        Поиск
       </Button>
       <div className="row mt-5" style={{ display: 'flex', justifyContent: 'space-evenly' }}>
         {routes.map((route) => (

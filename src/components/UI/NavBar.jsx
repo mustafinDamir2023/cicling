@@ -6,21 +6,21 @@ export default function NavBar({ user }) {
     <Navbar bg="secondary" data-bs-theme="dark">
       <Container>
         <>
-          <Navbar.Brand href="/">Home</Navbar.Brand>
+          <Navbar.Brand href="/">Elbrus tracker</Navbar.Brand>
           <Nav className="ml-auto">
-            <Nav.Link href="/routs/add">Add routs</Nav.Link>
+            <Nav.Link href="/routs/add">Добавить маршрут</Nav.Link>
           </Nav>
           <Nav className="ml-auto">
-            <Nav.Link href="/routs/all">My routs</Nav.Link>
+            <Nav.Link href="/routs/all">Мои маршруты</Nav.Link>
           </Nav>
           <Nav className="mr-auto">
-            <Nav.Link href="/logout">logout</Nav.Link>
+            <Nav.Link href="/logout">Выйти</Nav.Link>
           </Nav>
         </>
 
         <Nav className="ml-auto mr-auto">
-          <Nav.Link href="/signup">signup</Nav.Link>
-          <Nav.Link href="/login">login</Nav.Link>
+          <Nav.Link href="/signup">Зарегистрироваться</Nav.Link>
+          <Nav.Link href="/login">Войти</Nav.Link>
         </Nav>
       </Container>
     </Navbar>
