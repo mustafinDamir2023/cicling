@@ -1,4 +1,3 @@
-'use strict';
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
@@ -7,36 +6,38 @@ module.exports = {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
       },
       score: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
       },
       route_id: {
         type: Sequelize.INTEGER,
-        references:{
+        references: {
           model: 'Routes',
           key: 'id',
-        }
+        },
+        onDelete: 'CASCADE',
       },
       user_id: {
         type: Sequelize.INTEGER,
-        references:{
+        references: {
           model: 'Users',
           key: 'id',
-        }
+        },
+        onDelete: 'CASCADE',
       },
       createdAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
       },
       updatedAt: {
         allowNull: false,
-        type: Sequelize.DATE
-      }
+        type: Sequelize.DATE,
+      },
     });
   },
   async down(queryInterface, Sequelize) {
     await queryInterface.dropTable('Points');
-  }
+  },
 };

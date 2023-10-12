@@ -9,6 +9,7 @@ import apiRouter from './routes/apiRouter';
 import resLocals from './middlewares/resLocals';
 import authRouter from './routes/authRouter';
 import renderRouter from './routes/renderRouter';
+import cors from 'cors';
 
 require('dotenv').config();
 
@@ -38,6 +39,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(session(sessionConfig));
 app.use(resLocals);
+app.use(cors());
 
 app.use('/', indexRouter);
 app.use('/', authRouter);
