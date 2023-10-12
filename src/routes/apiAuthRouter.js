@@ -1,5 +1,6 @@
 import { Router } from 'express';
 import bcrypt from 'bcrypt';
+import { User } from '../../db/models';
 
 const apiAuthRouter = Router();
 
