@@ -1,5 +1,5 @@
 import express from 'express';
-import { Route } from '../../db/models';
+import { Route, User, Sequelize } from '../../db/models';
 
 const router = express.Router();
 
@@ -23,10 +23,8 @@ router.delete('/del/:id', async (req, res) => {
 });
 
 router.post('/add', async (req, res) => {
-  const {
-    start, end, img, distance, location, name,
-  } = req.body;
-  console.log(req.body)
+  const { start, end, img, distance, location, name } = req.body;
+  console.log(req.body);
   const data = await Route.create({
     start,
     end,
@@ -39,10 +37,40 @@ router.post('/add', async (req, res) => {
   res.json(data);
 });
 
-router.put("/edit/:id", async (req, res) => {
+router.put('/edit/:id', async (req, res) => {
   const data = req.body;
   await Route.update(data, { where: { id: req.params.id } });
-  res.send(data)
-})
+  res.send(data);
+});
+
+router.post('/routes/search', async (req, res) => {
+  const { input } = req.body;
+  try {
+    const routes = await Route.findAll({
+      where: {
+        name: {
+          [Sequelize.Op.iLike]: `%${input}%`,
+        },
+      },
+      include: {
+        model: User,
+        attributes: ['id', 'name'],
+      },
+    });
+    res.send(routes);
+  } catch (err) {
+    console.log(err);
+  }
+});
+
+router.get('/routes', async (req, res) => {
+  const routes = await Route.findAll({
+    include: {
+      model: User,
+      attributes: ['id', 'name'],
+    },
+  });
+  res.send(routes);
+});
 
 export default router;
