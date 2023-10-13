@@ -14,7 +14,9 @@ router.get('/routs/add', (req, res) => {
 
 router.get('/routs/all', async (req, res) => {
   console.log(req.session.user.id)
-  const allUserRoutes = await Route.findAll({ where: { user_id: req.session.user.id } });
+  const allUserRoutes = await Route.findAll({ where: {user_id:req.session.user.id} });
+  // const allRoutes = await Route.findAll();
+  // console.log(JSON.parse(JSON.stringify(allRoutes)))
   console.log("------",allUserRoutes)
   res.render('Layout', { allUserRoutes });
 });
