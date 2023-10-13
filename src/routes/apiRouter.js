@@ -34,7 +34,7 @@ router.post('/add', async (req, res) => {
     distance,
     location,
     name,
-    user_id: 1,
+    user_id: req.session.user.id,
   });
   res.json(data);
 });

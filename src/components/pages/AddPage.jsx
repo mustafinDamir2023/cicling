@@ -22,6 +22,7 @@ export default function AddPage() {
       setInputs((prev) => [...prev, data]);
     }
     e.target.reset();
+    window.location = "/"
     // setInputs([{
     //   start: '', end: '', img: '', distance: '', location: '', name: '',
     // }]);
