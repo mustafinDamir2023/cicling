@@ -39,4 +39,10 @@ router.post('/add', async (req, res) => {
   res.json(data);
 });
 
+router.put("/edit/:id", async (req, res) => {
+  const data = req.body;
+  await Route.update(data, { where: { id: req.params.id } });
+  res.send(data)
+})
+
 export default router;
