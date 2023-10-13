@@ -46,7 +46,7 @@ export default function HomePage({ user, allRoutes }) {
         style={{ width: '275px' }}
       />
       <br />
-      <Button variant="secondary" type="submit">
+      <Button variant="warning" type="submit">
         Поиск
       </Button>
       <div className="row mt-5" style={{ display: 'flex', justifyContent: 'space-evenly' }}>

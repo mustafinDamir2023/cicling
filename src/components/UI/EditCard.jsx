@@ -13,11 +13,11 @@ export default function EditCard({ rout, submitHandler }) {
   return (
     <Form onSubmit={submitHandler}>
       <InputGroup className="mb-1">
-        <InputGroup.Text id="basic-addon1">картинка</InputGroup.Text>
+        <InputGroup.Text id="basic-addon1" style={{ color: '#FFC618' }}>картинка</InputGroup.Text>
         <Form.Control name="img" aria-label="Username" aria-describedby="basic-addon1" />
       </InputGroup>
       <InputGroup className="mb-1">
-        <InputGroup.Text id="basic-addon1">название</InputGroup.Text>
+        <InputGroup.Text id="basic-addon1" style={{ color: '#FFC618' }}>название</InputGroup.Text>
         <Form.Control
           name="name"
           defaultValue={rout.name}
@@ -26,7 +26,7 @@ export default function EditCard({ rout, submitHandler }) {
         />
       </InputGroup>
       <InputGroup className="mb-1">
-        <InputGroup.Text id="basic-addon1">город</InputGroup.Text>
+        <InputGroup.Text id="basic-addon1" style={{ color: '#FFC618' }}>город</InputGroup.Text>
         <Form.Control
           name="location"
           defaultValue={rout.location}
@@ -35,7 +35,7 @@ export default function EditCard({ rout, submitHandler }) {
         />
       </InputGroup>
       <InputGroup className="mb-1">
-        <InputGroup.Text id="basic-addon1">дистанция</InputGroup.Text>
+        <InputGroup.Text id="basic-addon1" style={{ color: '#FFC618' }}>дистанция</InputGroup.Text>
         <Form.Control
           name="distance"
           defaultValue={rout.distance}
@@ -50,6 +50,7 @@ export default function EditCard({ rout, submitHandler }) {
           type="submit"
           variant="secondary"
           size="sm"
+          style={{ color: '#FFC618' }}
         >
           редактировать
         </Button>

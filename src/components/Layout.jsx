@@ -15,7 +15,7 @@ export default function Layout({ initState }) {
           integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
           crossOrigin="anonymous"
         />
-        <link rel="stylesheet" href="style.css" />
+        <link rel="stylesheet" href="/style.css" />
         <script defer src="https://api-maps.yandex.ru/v3/?apikey=f2497046-2d81-424e-a3df-6f1b95924b49&lang=ru_RU" />
         <script
           type="text/javascript"
