@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Form, Button } from 'react-bootstrap';
+import axios from 'axios';
 import CardRoute from '../UI/CardRoute';
 
 export default function HomePage({ user, allRoutes }) {
@@ -14,11 +15,36 @@ export default function HomePage({ user, allRoutes }) {
     }
   };
 
+  const [input, setInput] = React.useState('');
+  const changeHandler = (e) => {
+    setInput(e.target.value);
+  };
+  useEffect(() => {
+    if (input.trim()) {
+      const time = setTimeout(() => {
+        axios.post('/api/routes/search', { input }).then((res) => setRoutes(res.data));
+      }, 300);
+      return () => {
+        clearTimeout(time);
+      };
+    }
+    if (!input) {
+      axios.get('/api/routes').then((res) => setRoutes(res.data));
+    }
+  }, [input]);
+
   return (
     <div className="container">
       <br />
       <br />
-      <Form.Control name="name" type="text" placeholder="filter" style={{ width: '275px' }} />
+      <Form.Control
+        value={input}
+        onChange={changeHandler}
+        name="name"
+        type="text"
+        placeholder="filter"
+        style={{ width: '275px' }}
+      />
       <br />
       <Button variant="secondary" type="submit">
         Поиск
