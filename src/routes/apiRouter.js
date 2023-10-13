@@ -45,4 +45,5 @@ router.put("/edit/:id", async (req, res) => {
   res.send(data)
 })
 
-export default router;
+
+export default router; 
