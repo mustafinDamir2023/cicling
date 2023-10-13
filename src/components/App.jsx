@@ -14,6 +14,7 @@ function App({
   const {
     currentUser, signInHandler, signUpHandler, logoutHandler,
   } = useUser(user);
+
   return (
     <div className="container">
       <NavBar user={user} logoutHandler={logoutHandler} />

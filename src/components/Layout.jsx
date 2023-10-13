@@ -15,6 +15,7 @@ export default function Layout({ initState }) {
           integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
           crossOrigin="anonymous"
         />
+        <link rel="stylesheet" href="style.css" />
         <script defer src="https://api-maps.yandex.ru/v3/?apikey=f2497046-2d81-424e-a3df-6f1b95924b49&lang=ru_RU" />
         <script
           type="text/javascript"
@@ -26,8 +27,15 @@ export default function Layout({ initState }) {
         <script defer src="/vendor.js" />
         <title>Document</title>
       </head>
-      <body>
+
+      <body style={{
+        backgroundImage: 'url("../img/b3cfe0aa470631d1d867175a54ec6b6f.jpg")',
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: 'cover',
+      }}
+      >
         <div id="root">
+          S
           <StaticRouter location={initState.path}>
             <App {...initState} />
           </StaticRouter>
