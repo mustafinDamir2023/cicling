@@ -14,7 +14,9 @@ export default function Map() {
     // Промис `ymaps3.ready` будет зарезолвлен, когда загрузятся все компоненты основного модуля API
     await ymaps3.ready;
 
-    const { YMap, YMapDefaultSchemeLayer, YMapControls, YMapDefaultFeaturesLayer } = ymaps3;
+    const {
+      YMap, YMapDefaultSchemeLayer, YMapControls, YMapDefaultFeaturesLayer,
+    } = ymaps3;
     console.log('============', YMap);
     // Иницилиазируем карту
     const map = new YMap(
@@ -39,9 +41,8 @@ export default function Map() {
     initMap();
   }, []);
   return (
-    <>
-      <h1>Map</h1>
+    <div style={{ margin: '60px' }}>
       <div id="map" style={{ width: '600px', height: '400px' }} onClick={clickHandler} />
-    </>
+    </div>
   );
 }
