@@ -8,9 +8,6 @@ export default function HomePage({ user, allRoutes }) {
   const deleteHandler = async (id) => {
     const response = await fetch(`/api/del/${id}`, {
       method: 'DELETE',
-      // headers: {
-      //   'Content-Type': 'application/json',
-      // },
     });
     if (response.ok) {
       setRoutes((prev) => prev.filter((el) => el.id !== id));

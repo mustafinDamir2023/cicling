@@ -5,22 +5,17 @@ import EditCard from './EditCard';
 
 export default function CardRoute({ user, route, deleteHandler }) {
   const [show, setShow] = React.useState(false);
-  // const showHandler = () => {
-  //   setShow((prev) => !prev);
-  // };
 
   const [rout, setRout] = React.useState(route);
   const submitHandler = async (e) => {
     e.preventDefault();
-  
     const formData = Object.fromEntries(new FormData(e.target));
-    console.log(formData)
+    console.log(formData);
     const response = await axios.put(`/api/edit/${route.id}`, formData);
     setRout(response.data);
     setShow(false);
-    console.log(response.data);
   };
-
+// console.log("++++++++++++", route.user_id, user.id)
   return (
     <Card style={{ width: '20rem' }}>
       <Card.Img variant="top" src={rout.img} />
@@ -32,19 +27,16 @@ export default function CardRoute({ user, route, deleteHandler }) {
           <Button href={`/route/${route.id}`} variant="secondary">
             Подробнее
           </Button>
-          <ButtonGroup aria-label="Basic example">
-            <Button onClick={() => deleteHandler(rout.id)} variant="secondary">
-              уд.
-            </Button>
-            <Button
-              onClick={() => {
-                setShow(true);
-              }}
-              variant="secondary"
-            >
-              ред.
-            </Button>
-          </ButtonGroup>
+          {user?.id === route.user_id && (
+            <ButtonGroup aria-label="Basic example">
+              <Button onClick={() => deleteHandler(route.id)} variant="secondary">
+                уд.
+              </Button>
+              <Button onClick={() => setShow((prev) => !prev)} variant="secondary">
+                ред.
+              </Button>
+            </ButtonGroup>
+          )}
         </div>
       </Card.Body>
       {show && <EditCard rout={rout} submitHandler={submitHandler} />}
