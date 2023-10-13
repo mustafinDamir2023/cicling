@@ -49,7 +49,6 @@ app.use((req, res, next) => {
   next();
 });
 app.use(resLocals);
-
 app.use('/', indexRouter);
 app.use('/', renderRouter);
 app.use('/api', apiRouter);

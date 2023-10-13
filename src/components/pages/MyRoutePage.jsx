@@ -1,7 +1,19 @@
 import React from 'react'
-
-export default function MyRoutePage() {
+import Button from 'react-bootstrap/Button'
+import CardRoute from '../UI/CardRoute';
+export default function MyRoutePage({allUserRoutes, user, deleteHandler}) {
+  console.log(allUserRoutes);
   return (
-    <div>MyRoutePage</div>
-  )
+    <div className="container">
+      <br />
+      <Button variant="secondary" type="submit">
+        Поиск
+      </Button>
+      <div className="row mt-5" style={{ display: 'flex', justifyContent: 'space-evenly' }}>
+        {allUserRoutes.map((route) => (
+          <CardRoute key={route.id} route={route} user={user} deleteHandler={deleteHandler} />
+        ))}
+      </div>
+    </div>
+  );
 }

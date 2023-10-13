@@ -7,6 +7,7 @@ import AddPage from './pages/AddPage';
 import SignInPage from './pages/auth/SignInPage';
 import SignUpPage from './pages/auth/SignUpPage';
 import useUser from './hooks/useUser';
+import MyRoutePage from './pages/MyRoutePage';
 
 function App({
   user, allRoutes, allUserRoutes, oneRout,
@@ -23,6 +24,7 @@ function App({
         <Route path="/auth/signup" element={<SignUpPage signUpHandler={signUpHandler} />} />
         <Route path="/route/:id" element={<OneRoutePage user={user} oneRout={oneRout} />} />
         <Route path="/routs/add" element={<AddPage />} />
+        <Route path="/routs/all" element={<MyRoutePage user={user} allUserRoutes={allUserRoutes} />} />
       </Routes>
     </div>
   );
